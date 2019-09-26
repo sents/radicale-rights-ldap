@@ -26,10 +26,10 @@ if the check is successful.
     author="ZEDV FB-Physik FU-Berlin",
     author_email="zedv@physik.fu-berlin.de",
     url='https://github.com/sents/radicale-rights-ldap',
-    packages=["radicale-rights-ldap"],
+    packages=["radicale_rights_ldap"],
     entry_points={
         "console_scripts": [
-            "radicale_ldap_groups.py = radicale-rights-ldap.manage_groups:main"
+            "radicale_ldap_groups.py = radicale_rights_ldap.manage_groups:main"
         ]
     },
 )
