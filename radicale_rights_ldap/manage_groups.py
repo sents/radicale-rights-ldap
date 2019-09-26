@@ -68,6 +68,8 @@ def symlink_group(group):
         for collection in collections:
             source = path.join(storepath, group, collection)
             destination = path.join(storepath, user, collection)
+            if path.exists(destination):
+                continue
             symlink(source, destination)
 
 
@@ -81,7 +83,7 @@ Collection = radicale.storage.load(config, logger)
 ldap_conf = config["rights"]
 server = Server(ldap_conf["ldap_url"])
 calendar_groups = list(map(str.strip,
-                           rights_conf["managed_groups"].split(",")))
+                           ldap_conf["managed_groups"].split(",")))
 connection = Connection(server,
                         ldap_conf["ldap_binddn"],
                         ldap_conf["ldap_password"])
