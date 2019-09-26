@@ -25,7 +25,7 @@ if the check is successful.
     install_requires=["radicale", "ldap3"],
     author="ZEDV FB-Physik FU-Berlin",
     author_email="zedv@physik.fu-berlin.de",
-    #    url = '',
+    url='https://github.com/sents/radicale-rights-ldap',
     packages=["radicale-rights-ldap"],
     entry_points={
         "console_scripts": [
