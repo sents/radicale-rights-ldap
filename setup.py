@@ -5,7 +5,7 @@
 from distutils.core import setup
 
 setup(
-    name="radicale-rights-ldap,
+    name="radicale-rights-ldap",
     version="0.1",
     description="""
     A radicale plugin to manage rights with ldap,
