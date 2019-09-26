@@ -47,11 +47,11 @@ class Rights(rights.BaseRights):
             return False
 
     def authorized(self, user, path, permissions):
-        self.logger.debug("User %r is trying to access path %r.", user,
-                          path)
-        # everybody can read the root collection
-        if path == "/" and permissions == "r":
-            self.logger.debug("Accessing root path. Read access granted.")
+        self.logger.debug("User %r is trying to access path %r. Permissions: %r", user,
+                          path, permissions)
+        # everybody can access the root collection
+        if path == "/":
+            self.logger.debug("Accessing root path. Access granted.")
             return True
         user = user or ""
         sane_path = sanitize_path(path)
