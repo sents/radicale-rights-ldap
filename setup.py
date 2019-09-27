@@ -29,7 +29,7 @@ if the check is successful.
     packages=["radicale_rights_ldap"],
     entry_points={
         "console_scripts": [
-            "radicale_ldap_groups.py = radicale_rights_ldap.manage_groups:main"
+            "radicale_ldap_groups.py = radicale_rights_ldap.create_group_calendars:main"
         ]
     },
 )
