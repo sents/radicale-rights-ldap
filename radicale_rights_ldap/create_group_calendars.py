@@ -45,16 +45,18 @@ def create_group_calendar(group, collection_class):
         )
 
 
+def parse_sep_list(instring, sep=","):
+    return list(map(str.strip, instring.split(sep)))
+
+
 def main():
     config = radicale.config.load([sys.argv[1]])
+    calendar_groups = parse_sep_list(sys.argv[2])
     storepath = path.join(config.get("storage", "filesystem_folder"),
                           "collection-root")
-    radicale_users = visible_subdirs(storepath)
     logger = radicale.log.start("radicale", config.get("logging", "config"))
     Collection = radicale.storage.load(config, logger)
     rights_conf = config["rights"]
-    calendar_groups = list(map(str.strip,
-                               rights_conf["managed_groups"].split(",")))
     for group in calendar_groups:
         create_group_calendar(group, Collection)
     return 0
