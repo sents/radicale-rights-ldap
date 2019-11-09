@@ -34,7 +34,7 @@ def create_group_calendar(group, collection_class):
     collections = list(collection_class.discover(group, depth=1))
     group_calendar_exists = False
     for collection in collections:
-        if collection.get_meta().get("is_group_calendar", False):
+        if collection.get_meta().get("is_group_calendar", True):
             group_calendar_exists = True
     if not group_calendar_exists:
         create_collection(
